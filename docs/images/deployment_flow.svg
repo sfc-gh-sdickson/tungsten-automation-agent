@@ -1,83 +1,99 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="Segoe UI, Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" font-family="Segoe UI, Arial, sans-serif">
   <defs>
-    <linearGradient id="hdrGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#29B5E8"/>
-      <stop offset="100%" style="stop-color:#0D47A1"/>
-    </linearGradient>
+    <filter id="sh">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.12"/>
+    </filter>
+    <filter id="shLg">
+      <feDropShadow dx="2" dy="3" stdDeviation="5" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
   </defs>
+  <rect width="1000" height="700" fill="#ffffff"/>
+  <text x="500" y="35" text-anchor="middle" fill="#1a1a2e" font-size="24" font-weight="bold">Deployment Flow</text>
+  <text x="500" y="58" text-anchor="middle" fill="#666" font-size="12">Execution Order: 01 &gt; 02 &gt; 03 &gt; 03b &gt; 04 &gt; 05 &gt; 06 &gt; 07 &gt; 08 &gt; 09</text>
 
-  <rect width="800" height="500" fill="#f8fafc"/>
-  <rect x="0" y="0" width="800" height="45" fill="url(#hdrGrad)"/>
-  <text x="400" y="30" text-anchor="middle" fill="white" font-size="16" font-weight="bold">Deployment Flow — Execution Order</text>
+  <!-- Row 1: 01 -> 02 -> 03 -> 03b -->
+  <rect x="50" y="85" width="180" height="60" rx="8" fill="#eaf7fc" stroke="#29b5e8" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="140" y="110" text-anchor="middle" fill="#0e7fad" font-size="13" font-weight="bold">01 Infrastructure</text>
+  <text x="140" y="128" text-anchor="middle" fill="#555" font-size="10">Database, 3 Schemas, WH</text>
+  <line x1="230" y1="115" x2="268" y2="115" stroke="#29b5e8" stroke-width="1.5"/>
+  <polygon points="266,111 276,115 266,119" fill="#29b5e8"/>
 
-  <!-- Steps -->
-  <rect x="50" y="65" width="180" height="45" rx="6" fill="#1565C0"/>
-  <text x="140" y="85" text-anchor="middle" fill="white" font-size="10" font-weight="bold">01 Database + Schema</text>
-  <text x="140" y="100" text-anchor="middle" fill="#BBDEFB" font-size="9">TA_INTELLIGENCE, RAW/ANALYTICS/REF</text>
+  <rect x="280" y="85" width="180" height="60" rx="8" fill="#eaf7fc" stroke="#29b5e8" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="370" y="110" text-anchor="middle" fill="#0e7fad" font-size="13" font-weight="bold">02 Tables</text>
+  <text x="370" y="128" text-anchor="middle" fill="#555" font-size="10">19 Tables (11 RAW + 8 REF)</text>
+  <line x1="460" y1="115" x2="498" y2="115" stroke="#29b5e8" stroke-width="1.5"/>
+  <polygon points="496,111 506,115 496,119" fill="#29b5e8"/>
 
-  <rect x="50" y="125" width="180" height="45" rx="6" fill="#1976D2"/>
-  <text x="140" y="145" text-anchor="middle" fill="white" font-size="10" font-weight="bold">02 Create Tables</text>
-  <text x="140" y="160" text-anchor="middle" fill="#BBDEFB" font-size="9">11 RAW + 8 REFERENCE tables</text>
+  <rect x="510" y="85" width="180" height="60" rx="8" fill="#edf9f0" stroke="#00a843" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="600" y="110" text-anchor="middle" fill="#007a31" font-size="13" font-weight="bold">03 Synthetic Data</text>
+  <text x="600" y="128" text-anchor="middle" fill="#555" font-size="10">~500K docs, 100 customers</text>
+  <line x1="690" y1="115" x2="728" y2="115" stroke="#00a843" stroke-width="1.5"/>
+  <polygon points="726,111 736,115 726,119" fill="#00a843"/>
 
-  <rect x="50" y="185" width="180" height="45" rx="6" fill="#1E88E5"/>
-  <text x="140" y="205" text-anchor="middle" fill="white" font-size="10" font-weight="bold">03 Synthetic Data</text>
-  <text x="140" y="220" text-anchor="middle" fill="#BBDEFB" font-size="9">~500K docs, 100 customers, 12mo</text>
+  <rect x="740" y="85" width="210" height="60" rx="8" fill="#f3f0ff" stroke="#7b61ff" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="845" y="110" text-anchor="middle" fill="#5a3ec8" font-size="13" font-weight="bold">03b Industry Standards</text>
+  <text x="845" y="128" text-anchor="middle" fill="#555" font-size="10">APQC, Dublin Core, UBL, ITIL</text>
 
-  <rect x="50" y="245" width="180" height="45" rx="6" fill="#42A5F5"/>
-  <text x="140" y="265" text-anchor="middle" fill="white" font-size="10" font-weight="bold">03b Industry Standards</text>
-  <text x="140" y="280" text-anchor="middle" fill="#E3F2FD" font-size="9">APQC, Dublin Core, UBL, ITIL</text>
+  <!-- Arrow down to row 2 -->
+  <line x1="845" y1="145" x2="845" y2="165" stroke="#7b61ff" stroke-width="1.5"/>
+  <line x1="845" y1="165" x2="140" y2="165" stroke="#7b61ff" stroke-width="1.5"/>
+  <line x1="140" y1="165" x2="140" y2="188" stroke="#7b61ff" stroke-width="1.5"/>
+  <polygon points="136,186 140,196 144,186" fill="#7b61ff"/>
 
-  <rect x="300" y="65" width="180" height="45" rx="6" fill="#7B1FA2"/>
-  <text x="390" y="85" text-anchor="middle" fill="white" font-size="10" font-weight="bold">04 Analytical Views</text>
-  <text x="390" y="100" text-anchor="middle" fill="#E1BEE7" font-size="9">7 views joining RAW + REF</text>
+  <!-- Row 2: 04 -> 05 -> 06 -->
+  <rect x="50" y="200" width="180" height="60" rx="8" fill="#edf9f0" stroke="#00a843" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="140" y="225" text-anchor="middle" fill="#007a31" font-size="13" font-weight="bold">04 Analytical Views</text>
+  <text x="140" y="243" text-anchor="middle" fill="#555" font-size="10">7 Business Views</text>
+  <line x1="230" y1="230" x2="268" y2="230" stroke="#00a843" stroke-width="1.5"/>
+  <polygon points="266,226 276,230 266,234" fill="#00a843"/>
 
-  <rect x="300" y="125" width="180" height="45" rx="6" fill="#8E24AA"/>
-  <text x="390" y="145" text-anchor="middle" fill="white" font-size="10" font-weight="bold">05 Semantic Views</text>
-  <text x="390" y="160" text-anchor="middle" fill="#E1BEE7" font-size="9">6 domain-specific SVs</text>
+  <rect x="280" y="200" width="180" height="60" rx="8" fill="#eaf7fc" stroke="#29b5e8" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="370" y="225" text-anchor="middle" fill="#0e7fad" font-size="13" font-weight="bold">05 Semantic Views</text>
+  <text x="370" y="243" text-anchor="middle" fill="#555" font-size="10">6 Domain-Specific SVs</text>
+  <line x1="460" y1="230" x2="498" y2="230" stroke="#29b5e8" stroke-width="1.5"/>
+  <polygon points="496,226 506,230 496,234" fill="#29b5e8"/>
 
-  <rect x="300" y="185" width="180" height="45" rx="6" fill="#AB47BC"/>
-  <text x="390" y="205" text-anchor="middle" fill="white" font-size="10" font-weight="bold">06 Cortex Search</text>
-  <text x="390" y="220" text-anchor="middle" fill="#F3E5F5" font-size="9">Product Docs + Standards</text>
+  <rect x="510" y="200" width="180" height="60" rx="8" fill="#edf9f0" stroke="#00a843" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="600" y="225" text-anchor="middle" fill="#007a31" font-size="13" font-weight="bold">06 Cortex Search</text>
+  <text x="600" y="243" text-anchor="middle" fill="#555" font-size="10">Product Docs + Standards</text>
 
-  <rect x="550" y="65" width="200" height="45" rx="6" fill="#E65100"/>
-  <text x="650" y="85" text-anchor="middle" fill="white" font-size="10" font-weight="bold">07 ML Models (Notebook)</text>
-  <text x="650" y="100" text-anchor="middle" fill="#FFF3E0" font-size="9">Train + Register 4 models</text>
+  <!-- Arrow down to row 3 -->
+  <line x1="600" y1="260" x2="600" y2="280" stroke="#00a843" stroke-width="1.5"/>
+  <line x1="600" y1="280" x2="140" y2="280" stroke="#00a843" stroke-width="1.5"/>
+  <line x1="140" y1="280" x2="140" y2="303" stroke="#00a843" stroke-width="1.5"/>
+  <polygon points="136,301 140,311 144,301" fill="#e8530e"/>
 
-  <rect x="550" y="125" width="200" height="45" rx="6" fill="#F57C00"/>
-  <text x="650" y="145" text-anchor="middle" fill="white" font-size="10" font-weight="bold">08 ML Model UDFs</text>
-  <text x="650" y="160" text-anchor="middle" fill="#FFF3E0" font-size="9">4 UDFs calling MODEL()!PREDICT</text>
+  <!-- Row 3: 07 -> 08 -> 09 -->
+  <rect x="50" y="315" width="220" height="60" rx="8" fill="#fff3ed" stroke="#e8530e" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="160" y="340" text-anchor="middle" fill="#b33f08" font-size="13" font-weight="bold">07 ML Models (Notebook)</text>
+  <text x="160" y="358" text-anchor="middle" fill="#555" font-size="10">Train + Register 4 Models</text>
+  <line x1="270" y1="345" x2="308" y2="345" stroke="#e8530e" stroke-width="1.5"/>
+  <polygon points="306,341 316,345 306,349" fill="#e8530e"/>
 
-  <rect x="550" y="185" width="200" height="45" rx="6" fill="#FF9800"/>
-  <text x="650" y="205" text-anchor="middle" fill="white" font-size="10" font-weight="bold">09 Create Agent</text>
-  <text x="650" y="220" text-anchor="middle" fill="#FFF3E0" font-size="9">12 tools wired in YAML</text>
+  <rect x="320" y="315" width="200" height="60" rx="8" fill="#fff3ed" stroke="#e8530e" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="420" y="340" text-anchor="middle" fill="#b33f08" font-size="13" font-weight="bold">08 ML Model UDFs</text>
+  <text x="420" y="358" text-anchor="middle" fill="#555" font-size="10">4 UDFs calling MODEL!PREDICT</text>
+  <line x1="520" y1="345" x2="558" y2="345" stroke="#e8530e" stroke-width="1.5"/>
+  <polygon points="556,341 566,345 556,349" fill="#e8530e"/>
 
-  <!-- Arrows -->
-  <path d="M 140 110 L 140 125" stroke="#1565C0" stroke-width="2" fill="none" marker-end="url(#arr)"/>
-  <path d="M 140 170 L 140 185" stroke="#1976D2" stroke-width="2" fill="none"/>
-  <path d="M 140 230 L 140 245" stroke="#1E88E5" stroke-width="2" fill="none"/>
-  <path d="M 230 267 L 300 87" stroke="#42A5F5" stroke-width="1.5" fill="none" stroke-dasharray="4"/>
-  <path d="M 390 110 L 390 125" stroke="#7B1FA2" stroke-width="2" fill="none"/>
-  <path d="M 390 170 L 390 185" stroke="#8E24AA" stroke-width="2" fill="none"/>
-  <path d="M 480 207 L 550 87" stroke="#AB47BC" stroke-width="1.5" fill="none" stroke-dasharray="4"/>
-  <path d="M 650 110 L 650 125" stroke="#E65100" stroke-width="2" fill="none"/>
-  <path d="M 650 170 L 650 185" stroke="#F57C00" stroke-width="2" fill="none"/>
+  <rect x="570" y="315" width="200" height="60" rx="8" fill="#fff3ed" stroke="#e8530e" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="670" y="340" text-anchor="middle" fill="#b33f08" font-size="13" font-weight="bold">09 Create Agent</text>
+  <text x="670" y="358" text-anchor="middle" fill="#555" font-size="10">12 Tools Wired in YAML</text>
 
-  <!-- Final result box -->
-  <rect x="200" y="330" width="400" height="60" rx="10" fill="#2E7D32" stroke="#1B5E20" stroke-width="2"/>
-  <text x="400" y="355" text-anchor="middle" fill="white" font-size="13" font-weight="bold">Tungsten Automation Agent LIVE</text>
-  <text x="400" y="375" text-anchor="middle" fill="#C8E6C9" font-size="10">6 Analyst + 2 Search + 4 ML = 12 Tools</text>
+  <!-- Final result -->
+  <line x1="670" y1="375" x2="670" y2="415" stroke="#e8530e" stroke-width="2"/>
+  <polygon points="666,413 670,423 674,413" fill="#00a843"/>
 
-  <path d="M 650 230 L 400 330" stroke="#2E7D32" stroke-width="2" fill="none"/>
+  <rect x="400" y="430" width="540" height="70" rx="12" fill="#00a843" filter="url(#shLg)"/>
+  <text x="670" y="460" text-anchor="middle" fill="#fff" font-size="16" font-weight="bold">TUNGSTEN_AUTOMATION_AGENT — LIVE</text>
+  <text x="670" y="483" text-anchor="middle" fill="#c8e6c9" font-size="12">6 Cortex Analyst + 2 Cortex Search + 4 ML UDFs = 12 Tools</text>
 
   <!-- Legend -->
-  <rect x="50" y="420" width="15" height="15" fill="#1565C0"/>
-  <text x="72" y="432" fill="#333" font-size="10">SQL Setup + Data</text>
-  <rect x="200" y="420" width="15" height="15" fill="#7B1FA2"/>
-  <text x="222" y="432" fill="#333" font-size="10">Views + Search</text>
-  <rect x="350" y="420" width="15" height="15" fill="#E65100"/>
-  <text x="372" y="432" fill="#333" font-size="10">ML + Agent</text>
-  <rect x="500" y="420" width="15" height="15" fill="#2E7D32"/>
-  <text x="522" y="432" fill="#333" font-size="10">Final Deployment</text>
-
-  <text x="400" y="480" text-anchor="middle" fill="#78909C" font-size="10">Execute files in numbered order (01 → 09). Notebook (07) runs in Snowsight.</text>
+  <rect x="50" y="550" width="900" height="130" rx="8" fill="#f8f9fa" stroke="#dde1e6" stroke-width="1" filter="url(#sh)"/>
+  <text x="500" y="575" text-anchor="middle" fill="#1a1a2e" font-size="13" font-weight="bold">Execution Notes</text>
+  <line x1="60" y1="585" x2="940" y2="585" stroke="#dde1e6" stroke-width="1"/>
+  <text x="70" y="608" fill="#444" font-size="11">1. Execute SQL files sequentially in any Snowflake SQL client (Snowsight, SnowSQL, VS Code).</text>
+  <text x="70" y="628" fill="#444" font-size="11">2. Notebook (07) must run in Snowsight — it trains models and registers them in the Snowflake Model Registry.</text>
+  <text x="70" y="648" fill="#444" font-size="11">3. UDFs (08) call the registered models via MODEL(name, version)!PREDICT() — do not use hardcoded thresholds.</text>
+  <text x="70" y="668" fill="#444" font-size="11">4. Agent (09) wires all 12 tools and is accessible via Snowflake Intelligence in Snowsight.</text>
 </svg>

@@ -1,91 +1,159 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" font-family="Segoe UI, Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 880" font-family="Segoe UI, Arial, sans-serif">
   <defs>
-    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#29B5E8"/>
-      <stop offset="100%" style="stop-color:#0D47A1"/>
-    </linearGradient>
+    <filter id="sh">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.12"/>
+    </filter>
+    <filter id="shLg">
+      <feDropShadow dx="2" dy="3" stdDeviation="5" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
   </defs>
+  <rect width="1200" height="880" fill="#ffffff"/>
+  <text x="600" y="40" text-anchor="middle" fill="#1a1a2e" font-size="26" font-weight="bold">Tungsten Automation Intelligence Agent Architecture</text>
+  <text x="600" y="65" text-anchor="middle" fill="#666" font-size="13">Snowflake Intelligence + APQC/Dublin Core/UBL/ITIL Ontology + 6 Domain Semantic Views + ML Predictions</text>
 
-  <!-- Background -->
-  <rect width="900" height="600" fill="#f8fafc"/>
+  <!-- Users -->
+  <rect x="380" y="85" width="440" height="50" rx="10" fill="#29b5e8" filter="url(#sh)"/>
+  <text x="600" y="116" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">Users: Product Managers, Customer Success, Executives, Platform Eng</text>
 
-  <!-- Header -->
-  <rect x="0" y="0" width="900" height="50" fill="url(#headerGrad)"/>
-  <text x="450" y="33" text-anchor="middle" fill="white" font-size="18" font-weight="bold">Tungsten Automation Intelligence Agent — Architecture</text>
+  <line x1="600" y1="135" x2="600" y2="165" stroke="#29b5e8" stroke-width="2"/>
+  <polygon points="596,163 604,163 600,173" fill="#29b5e8"/>
 
-  <!-- Agent Layer -->
-  <rect x="250" y="70" width="400" height="50" rx="8" fill="#1565C0" stroke="#0D47A1" stroke-width="2"/>
-  <text x="450" y="100" text-anchor="middle" fill="white" font-size="14" font-weight="bold">TUNGSTEN_AUTOMATION_AGENT</text>
+  <!-- Agent -->
+  <rect x="350" y="175" width="500" height="65" rx="12" fill="#e8530e" filter="url(#shLg)"/>
+  <text x="600" y="202" text-anchor="middle" fill="#fff" font-size="18" font-weight="bold">TUNGSTEN_AUTOMATION_AGENT</text>
+  <text x="600" y="224" text-anchor="middle" fill="#ffe0cc" font-size="12">Snowflake Intelligence | 12 Tools | 6 Domains | Natural Language</text>
 
-  <!-- Tool Layer -->
-  <rect x="30" y="145" width="840" height="85" rx="6" fill="#E3F2FD" stroke="#90CAF9" stroke-width="1"/>
-  <text x="50" y="165" fill="#1565C0" font-size="11" font-weight="bold">TOOLS (12)</text>
+  <!-- Dashed lines to tool sections -->
+  <line x1="420" y1="240" x2="145" y2="280" stroke="#7b61ff" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="500" y1="240" x2="430" y2="280" stroke="#29b5e8" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="700" y1="240" x2="720" y2="280" stroke="#00a843" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="780" y1="240" x2="1025" y2="280" stroke="#e8530e" stroke-width="1.5" stroke-dasharray="5,3"/>
 
-  <!-- Analyst Tools -->
-  <rect x="40" y="175" width="120" height="40" rx="4" fill="#29B5E8" stroke="#0288D1" stroke-width="1"/>
-  <text x="100" y="193" text-anchor="middle" fill="white" font-size="9" font-weight="bold">Doc Processing</text>
-  <text x="100" y="206" text-anchor="middle" fill="white" font-size="8">Analyst</text>
+  <!-- Ontology Engine -->
+  <rect x="20" y="280" width="250" height="180" rx="10" fill="#f3f0ff" stroke="#7b61ff" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="145" y="305" text-anchor="middle" fill="#5a3ec8" font-size="14" font-weight="bold">Standards Engine</text>
+  <text x="145" y="323" text-anchor="middle" fill="#7b61ff" font-size="11">APQC + Dublin Core + UBL + ITIL</text>
+  <line x1="30" y1="333" x2="260" y2="333" stroke="#d4c8ff" stroke-width="1"/>
+  <text x="35" y="353" fill="#444" font-size="11">APQC_PROCESS_TAXONOMY</text>
+  <text x="35" y="371" fill="#444" font-size="11">DUBLIN_CORE_DOCUMENT_TYPES</text>
+  <text x="35" y="389" fill="#444" font-size="11">UBL_INVOICE_ELEMENTS</text>
+  <text x="35" y="407" fill="#444" font-size="11">EINVOICE_MANDATE_REGISTRY</text>
+  <text x="35" y="425" fill="#444" font-size="11">ITIL_SERVICE_METRICS</text>
+  <text x="35" y="443" fill="#444" font-size="11">INDUSTRY / GDPR / OCR_MODEL</text>
 
-  <rect x="170" y="175" width="120" height="40" rx="4" fill="#29B5E8" stroke="#0288D1" stroke-width="1"/>
-  <text x="230" y="193" text-anchor="middle" fill="white" font-size="9" font-weight="bold">Workflow</text>
-  <text x="230" y="206" text-anchor="middle" fill="white" font-size="8">Analyst</text>
+  <!-- Cortex Analyst (6 SVs) -->
+  <rect x="300" y="280" width="260" height="180" rx="10" fill="#eaf7fc" stroke="#29b5e8" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="430" y="305" text-anchor="middle" fill="#0e7fad" font-size="14" font-weight="bold">Cortex Analyst</text>
+  <text x="430" y="323" text-anchor="middle" fill="#29b5e8" font-size="11">Text-to-SQL | 6 Semantic Views</text>
+  <line x1="310" y1="333" x2="550" y2="333" stroke="#b3e5fc" stroke-width="1"/>
+  <text x="315" y="353" fill="#444" font-size="11">TA_DOCUMENT_PROCESSING_SV</text>
+  <text x="315" y="371" fill="#444" font-size="11">TA_WORKFLOW_AUTOMATION_SV</text>
+  <text x="315" y="389" fill="#444" font-size="11">TA_INVOICE_NETWORK_SV</text>
+  <text x="315" y="407" fill="#444" font-size="11">TA_CUSTOMER_HEALTH_SV</text>
+  <text x="315" y="425" fill="#444" font-size="11">TA_PLATFORM_OPERATIONS_SV</text>
+  <text x="315" y="443" fill="#444" font-size="11">TA_REVENUE_BUSINESS_SV</text>
 
-  <rect x="300" y="175" width="120" height="40" rx="4" fill="#29B5E8" stroke="#0288D1" stroke-width="1"/>
-  <text x="360" y="193" text-anchor="middle" fill="white" font-size="9" font-weight="bold">Invoice Network</text>
-  <text x="360" y="206" text-anchor="middle" fill="white" font-size="8">Analyst</text>
+  <!-- Cortex Search -->
+  <rect x="590" y="280" width="260" height="180" rx="10" fill="#edf9f0" stroke="#00a843" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="720" y="305" text-anchor="middle" fill="#007a31" font-size="14" font-weight="bold">Cortex Search</text>
+  <text x="720" y="323" text-anchor="middle" fill="#00a843" font-size="11">RAG | Semantic Search</text>
+  <line x1="600" y1="333" x2="840" y2="333" stroke="#b9f6ca" stroke-width="1"/>
+  <text x="605" y="353" fill="#444" font-size="11">TA_PRODUCT_DOCS_SEARCH</text>
+  <text x="605" y="371" fill="#444" font-size="11">14 articles | Config, Troubleshoot</text>
+  <text x="605" y="395" fill="#444" font-size="11">TA_STANDARDS_COMPLIANCE_SEARCH</text>
+  <text x="605" y="413" fill="#444" font-size="11">14 articles | APQC, UBL, ITIL,</text>
+  <text x="605" y="431" fill="#444" font-size="11">GDPR, e-Invoicing Mandates</text>
 
-  <rect x="430" y="175" width="120" height="40" rx="4" fill="#29B5E8" stroke="#0288D1" stroke-width="1"/>
-  <text x="490" y="193" text-anchor="middle" fill="white" font-size="9" font-weight="bold">Customer Health</text>
-  <text x="490" y="206" text-anchor="middle" fill="white" font-size="8">Analyst</text>
+  <!-- ML UDFs -->
+  <rect x="880" y="280" width="290" height="180" rx="10" fill="#fff3ed" stroke="#e8530e" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="1025" y="305" text-anchor="middle" fill="#b33f08" font-size="14" font-weight="bold">ML Prediction UDFs</text>
+  <text x="1025" y="323" text-anchor="middle" fill="#e8530e" font-size="11">Model Registry | sklearn | 4 Models</text>
+  <line x1="890" y1="333" x2="1160" y2="333" stroke="#ffd4bf" stroke-width="1"/>
+  <text x="895" y="353" fill="#444" font-size="11">AGENT_PREDICT_CHURN_RISK</text>
+  <text x="895" y="371" fill="#444" font-size="11">AGENT_PREDICT_EXTRACTION_ACCURACY</text>
+  <text x="895" y="389" fill="#444" font-size="11">AGENT_DETECT_INVOICE_ANOMALY</text>
+  <text x="895" y="407" fill="#444" font-size="11">AGENT_FORECAST_CAPACITY</text>
 
-  <rect x="560" y="175" width="120" height="40" rx="4" fill="#29B5E8" stroke="#0288D1" stroke-width="1"/>
-  <text x="620" y="193" text-anchor="middle" fill="white" font-size="9" font-weight="bold">Platform Ops</text>
-  <text x="620" y="206" text-anchor="middle" fill="white" font-size="8">Analyst</text>
+  <!-- Data Layer Container -->
+  <rect x="15" y="495" width="1170" height="370" rx="12" fill="#f8f9fa" stroke="#dde1e6" stroke-width="1" filter="url(#sh)"/>
+  <text x="600" y="521" text-anchor="middle" fill="#1a1a2e" font-size="14" font-weight="bold">DATA LAYER — TA_INTELLIGENCE Database</text>
 
-  <rect x="690" y="175" width="120" height="40" rx="4" fill="#29B5E8" stroke="#0288D1" stroke-width="1"/>
-  <text x="750" y="193" text-anchor="middle" fill="white" font-size="9" font-weight="bold">Revenue</text>
-  <text x="750" y="206" text-anchor="middle" fill="white" font-size="8">Analyst</text>
+  <!-- RAW Schema Tables Row 1 -->
+  <rect x="30" y="540" width="190" height="100" rx="8" fill="#fff" stroke="#29b5e8" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="125" y="562" text-anchor="middle" fill="#0e7fad" font-size="11" font-weight="bold">DOCUMENT_PROCESSING</text>
+  <text x="125" y="578" text-anchor="middle" fill="#0e7fad" font-size="11" font-weight="bold">_JOBS</text>
+  <text x="125" y="598" text-anchor="middle" fill="#555" font-size="10">~500K rows</text>
+  <text x="125" y="614" text-anchor="middle" fill="#555" font-size="10">10 doc types, 6 products</text>
+  <text x="125" y="630" text-anchor="middle" fill="#555" font-size="10">5 regions, 12 months</text>
 
-  <!-- Search + ML row -->
-  <rect x="40" y="250" width="200" height="35" rx="4" fill="#4CAF50" stroke="#388E3C" stroke-width="1"/>
-  <text x="140" y="272" text-anchor="middle" fill="white" font-size="9" font-weight="bold">Cortex Search (Product Docs + Standards)</text>
+  <rect x="240" y="540" width="170" height="100" rx="8" fill="#fff" stroke="#29b5e8" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="325" y="562" text-anchor="middle" fill="#0e7fad" font-size="11" font-weight="bold">EXTRACTION_RESULTS</text>
+  <text x="325" y="582" text-anchor="middle" fill="#555" font-size="10">~2M rows</text>
+  <text x="325" y="598" text-anchor="middle" fill="#555" font-size="10">Confidence scores</text>
+  <text x="325" y="614" text-anchor="middle" fill="#555" font-size="10">Manual corrections</text>
 
-  <rect x="260" y="250" width="600" height="35" rx="4" fill="#FF9800" stroke="#F57C00" stroke-width="1"/>
-  <text x="560" y="272" text-anchor="middle" fill="white" font-size="9" font-weight="bold">ML UDFs: Churn Risk | Extraction Accuracy | Invoice Anomaly | Capacity Forecast</text>
+  <rect x="430" y="540" width="170" height="100" rx="8" fill="#fff" stroke="#29b5e8" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="515" y="562" text-anchor="middle" fill="#0e7fad" font-size="11" font-weight="bold">WORKFLOW_INSTANCES</text>
+  <text x="515" y="582" text-anchor="middle" fill="#555" font-size="10">~150K rows</text>
+  <text x="515" y="598" text-anchor="middle" fill="#555" font-size="10">20 workflow types</text>
+  <text x="515" y="614" text-anchor="middle" fill="#555" font-size="10">APQC process mapped</text>
 
-  <!-- Semantic Views Layer -->
-  <rect x="30" y="310" width="840" height="55" rx="6" fill="#FFF3E0" stroke="#FFB74D" stroke-width="1"/>
-  <text x="50" y="330" fill="#E65100" font-size="11" font-weight="bold">SEMANTIC VIEWS (6 Domain-Specific)</text>
-  <text x="50" y="352" fill="#BF360C" font-size="10">TA_DOCUMENT_PROCESSING_SV | TA_WORKFLOW_AUTOMATION_SV | TA_INVOICE_NETWORK_SV | TA_CUSTOMER_HEALTH_SV | TA_PLATFORM_OPERATIONS_SV | TA_REVENUE_BUSINESS_SV</text>
+  <rect x="620" y="540" width="190" height="100" rx="8" fill="#fff" stroke="#29b5e8" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="715" y="562" text-anchor="middle" fill="#0e7fad" font-size="11" font-weight="bold">INVOICE_NETWORK</text>
+  <text x="715" y="578" text-anchor="middle" fill="#0e7fad" font-size="11" font-weight="bold">_TRANSACTIONS</text>
+  <text x="715" y="598" text-anchor="middle" fill="#555" font-size="10">~800K rows</text>
+  <text x="715" y="614" text-anchor="middle" fill="#555" font-size="10">20 countries, 6 standards</text>
 
-  <!-- Analytical Views Layer -->
-  <rect x="30" y="385" width="840" height="40" rx="6" fill="#F3E5F5" stroke="#CE93D8" stroke-width="1"/>
-  <text x="50" y="410" fill="#6A1B9A" font-size="11" font-weight="bold">ANALYTICAL VIEWS (ANALYTICS Schema) — V_DOCUMENT_PROCESSING, V_WORKFLOW_PERFORMANCE, V_INVOICE_NETWORK, V_CUSTOMER_HEALTH, V_PLATFORM_HEALTH, V_REVENUE_METRICS</text>
+  <rect x="830" y="540" width="170" height="100" rx="8" fill="#fff" stroke="#29b5e8" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="915" y="562" text-anchor="middle" fill="#0e7fad" font-size="11" font-weight="bold">CLASSIFICATION</text>
+  <text x="915" y="578" text-anchor="middle" fill="#0e7fad" font-size="11" font-weight="bold">_EVENTS</text>
+  <text x="915" y="598" text-anchor="middle" fill="#555" font-size="10">~500K rows</text>
+  <text x="915" y="614" text-anchor="middle" fill="#555" font-size="10">4 model versions</text>
 
-  <!-- Data Layer -->
-  <rect x="30" y="445" width="530" height="140" rx="6" fill="#E8F5E9" stroke="#A5D6A7" stroke-width="1"/>
-  <text x="50" y="468" fill="#2E7D32" font-size="11" font-weight="bold">RAW Schema (11 Tables)</text>
-  <text x="50" y="488" fill="#1B5E20" font-size="9">DOCUMENT_PROCESSING_JOBS | EXTRACTION_RESULTS | CLASSIFICATION_EVENTS</text>
-  <text x="50" y="504" fill="#1B5E20" font-size="9">WORKFLOW_INSTANCES | INVOICE_NETWORK_TRANSACTIONS</text>
-  <text x="50" y="520" fill="#1B5E20" font-size="9">CUSTOMER_SUBSCRIPTIONS | CUSTOMER_USAGE_METRICS | SUPPORT_TICKETS</text>
-  <text x="50" y="536" fill="#1B5E20" font-size="9">PLATFORM_HEALTH_METRICS | CUSTOMER_DIM | PRODUCT_DIM</text>
-  <text x="50" y="558" fill="#388E3C" font-size="9" font-style="italic">~500K docs | 100 customers | 12 months</text>
+  <!-- RAW Schema Tables Row 2 -->
+  <rect x="30" y="660" width="170" height="90" rx="8" fill="#fff" stroke="#00a843" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="115" y="682" text-anchor="middle" fill="#007a31" font-size="11" font-weight="bold">CUSTOMER_DIM</text>
+  <text x="115" y="700" text-anchor="middle" fill="#555" font-size="10">100 customers</text>
+  <text x="115" y="716" text-anchor="middle" fill="#555" font-size="10">5 industries, 3 segments</text>
+  <text x="115" y="732" text-anchor="middle" fill="#555" font-size="10">10 countries</text>
 
-  <rect x="580" y="445" width="290" height="140" rx="6" fill="#FFF8E1" stroke="#FFD54F" stroke-width="1"/>
-  <text x="600" y="468" fill="#F57F17" font-size="11" font-weight="bold">REFERENCE Schema (8 Tables)</text>
-  <text x="600" y="488" fill="#E65100" font-size="9">APQC_PROCESS_TAXONOMY</text>
-  <text x="600" y="504" fill="#E65100" font-size="9">DUBLIN_CORE_DOCUMENT_TYPES</text>
-  <text x="600" y="520" fill="#E65100" font-size="9">UBL_INVOICE_ELEMENTS</text>
-  <text x="600" y="536" fill="#E65100" font-size="9">EINVOICE_MANDATE_REGISTRY</text>
-  <text x="600" y="552" fill="#E65100" font-size="9">ITIL_SERVICE_METRICS | INDUSTRY | GDPR | OCR</text>
+  <rect x="220" y="660" width="170" height="90" rx="8" fill="#fff" stroke="#00a843" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="305" y="682" text-anchor="middle" fill="#007a31" font-size="11" font-weight="bold">CUSTOMER_USAGE</text>
+  <text x="305" y="700" text-anchor="middle" fill="#555" font-size="10">~36,500 rows</text>
+  <text x="305" y="716" text-anchor="middle" fill="#555" font-size="10">100 cust x 365 days</text>
+  <text x="305" y="732" text-anchor="middle" fill="#555" font-size="10">Docs, pages, API, users</text>
 
-  <!-- Connection lines -->
-  <line x1="450" y1="120" x2="450" y2="145" stroke="#1565C0" stroke-width="2" marker-end="url(#arrow)"/>
-  <line x1="450" y1="285" x2="450" y2="310" stroke="#E65100" stroke-width="1.5"/>
-  <line x1="450" y1="365" x2="450" y2="385" stroke="#6A1B9A" stroke-width="1.5"/>
-  <line x1="300" y1="425" x2="300" y2="445" stroke="#2E7D32" stroke-width="1.5"/>
-  <line x1="720" y1="425" x2="720" y2="445" stroke="#F57F17" stroke-width="1.5"/>
+  <rect x="410" y="660" width="170" height="90" rx="8" fill="#fff" stroke="#00a843" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="495" y="682" text-anchor="middle" fill="#007a31" font-size="11" font-weight="bold">SUPPORT_TICKETS</text>
+  <text x="495" y="700" text-anchor="middle" fill="#555" font-size="10">~5,000 rows</text>
+  <text x="495" y="716" text-anchor="middle" fill="#555" font-size="10">P1-P4 severity</text>
+  <text x="495" y="732" text-anchor="middle" fill="#555" font-size="10">CSAT scores</text>
 
-  <!-- Database label -->
-  <text x="450" y="595" text-anchor="middle" fill="#546E7A" font-size="12" font-weight="bold">TA_INTELLIGENCE Database</text>
+  <rect x="600" y="660" width="190" height="90" rx="8" fill="#fff" stroke="#00a843" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="695" y="682" text-anchor="middle" fill="#007a31" font-size="11" font-weight="bold">PLATFORM_HEALTH</text>
+  <text x="695" y="700" text-anchor="middle" fill="#555" font-size="10">~52,000 rows</text>
+  <text x="695" y="716" text-anchor="middle" fill="#555" font-size="10">6 products x 5 regions</text>
+  <text x="695" y="732" text-anchor="middle" fill="#555" font-size="10">Hourly metrics</text>
+
+  <rect x="810" y="660" width="170" height="90" rx="8" fill="#fff" stroke="#00a843" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="895" y="682" text-anchor="middle" fill="#007a31" font-size="11" font-weight="bold">SUBSCRIPTIONS</text>
+  <text x="895" y="700" text-anchor="middle" fill="#555" font-size="10">100 rows</text>
+  <text x="895" y="716" text-anchor="middle" fill="#555" font-size="10">ARR $50K-$5M</text>
+  <text x="895" y="732" text-anchor="middle" fill="#555" font-size="10">Volume limits</text>
+
+  <!-- Products -->
+  <rect x="1000" y="660" width="170" height="90" rx="8" fill="#fff" stroke="#00a843" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="1085" y="682" text-anchor="middle" fill="#007a31" font-size="11" font-weight="bold">PRODUCT_DIM</text>
+  <text x="1085" y="700" text-anchor="middle" fill="#555" font-size="10">6 products</text>
+  <text x="1085" y="716" text-anchor="middle" fill="#555" font-size="10">3 families</text>
+  <text x="1085" y="732" text-anchor="middle" fill="#555" font-size="10">Cloud/Hybrid/On-prem</text>
+
+  <!-- Schema labels -->
+  <text x="50" y="775" fill="#0e7fad" font-size="12" font-weight="bold">RAW Schema — 11 Operational Tables</text>
+  <text x="600" y="775" fill="#5a3ec8" font-size="12" font-weight="bold">REFERENCE Schema — 8 Standards Tables</text>
+
+  <!-- Footer -->
+  <rect x="30" y="800" width="1140" height="55" rx="8" fill="#fff" stroke="#dde1e6" stroke-width="1" filter="url(#sh)"/>
+  <text x="600" y="825" text-anchor="middle" fill="#1a1a2e" font-size="13" font-weight="bold">Tungsten Automation (formerly Kofax) | 25,000+ Customers | Banking, Insurance, Healthcare, Government, Supply Chain</text>
+  <text x="600" y="845" text-anchor="middle" fill="#666" font-size="11">TotalAgility | InvoiceAgility | AP Agility | OmniPage | ControlSuite | Printix</text>
 </svg>

@@ -1,86 +1,87 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="Segoe UI, Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" font-family="Segoe UI, Arial, sans-serif">
   <defs>
-    <linearGradient id="mlGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#E65100"/>
-      <stop offset="100%" style="stop-color:#FF9800"/>
-    </linearGradient>
+    <filter id="sh">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.12"/>
+    </filter>
+    <filter id="shLg">
+      <feDropShadow dx="2" dy="3" stdDeviation="5" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
   </defs>
+  <rect width="1000" height="600" fill="#ffffff"/>
+  <text x="500" y="35" text-anchor="middle" fill="#1a1a2e" font-size="24" font-weight="bold">ML Pipeline</text>
+  <text x="500" y="58" text-anchor="middle" fill="#666" font-size="12">Data &gt; Notebook (Train) &gt; Model Registry (Log) &gt; UDFs (Predict) &gt; Agent (Invoke)</text>
 
-  <rect width="800" height="450" fill="#f8fafc"/>
-  <rect x="0" y="0" width="800" height="45" fill="url(#mlGrad)"/>
-  <text x="400" y="30" text-anchor="middle" fill="white" font-size="16" font-weight="bold">ML Pipeline — Train, Register, Predict</text>
+  <!-- Pipeline stages header -->
+  <rect x="30" y="80" width="180" height="45" rx="8" fill="#edf9f0" stroke="#00a843" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="120" y="108" text-anchor="middle" fill="#007a31" font-size="13" font-weight="bold">Data Sources</text>
+  <line x1="210" y1="102" x2="248" y2="102" stroke="#00a843" stroke-width="1.5"/>
+  <polygon points="246,98 256,102 246,106" fill="#00a843"/>
 
-  <!-- Data Sources -->
-  <rect x="30" y="70" width="160" height="100" rx="6" fill="#E8F5E9" stroke="#A5D6A7"/>
-  <text x="110" y="92" text-anchor="middle" fill="#2E7D32" font-size="10" font-weight="bold">Data Sources</text>
-  <text x="110" y="110" text-anchor="middle" fill="#1B5E20" font-size="9">CUSTOMER_USAGE_METRICS</text>
-  <text x="110" y="124" text-anchor="middle" fill="#1B5E20" font-size="9">SUPPORT_TICKETS</text>
-  <text x="110" y="138" text-anchor="middle" fill="#1B5E20" font-size="9">CLASSIFICATION_EVENTS</text>
-  <text x="110" y="152" text-anchor="middle" fill="#1B5E20" font-size="9">INVOICE_TRANSACTIONS</text>
-  <text x="110" y="166" text-anchor="middle" fill="#1B5E20" font-size="9">PLATFORM_HEALTH_METRICS</text>
+  <rect x="260" y="80" width="200" height="45" rx="8" fill="#fff3ed" stroke="#e8530e" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="360" y="108" text-anchor="middle" fill="#b33f08" font-size="13" font-weight="bold">07_ml_models.ipynb</text>
+  <line x1="460" y1="102" x2="498" y2="102" stroke="#e8530e" stroke-width="1.5"/>
+  <polygon points="496,98 506,102 496,106" fill="#e8530e"/>
 
-  <!-- Training (Notebook) -->
-  <rect x="230" y="70" width="200" height="100" rx="6" fill="#FFF3E0" stroke="#FFB74D"/>
-  <text x="330" y="92" text-anchor="middle" fill="#E65100" font-size="10" font-weight="bold">07_ml_models.ipynb</text>
-  <text x="330" y="112" text-anchor="middle" fill="#BF360C" font-size="9">Feature Engineering</text>
-  <text x="330" y="128" text-anchor="middle" fill="#BF360C" font-size="9">Train/Test Split (80/20)</text>
-  <text x="330" y="144" text-anchor="middle" fill="#BF360C" font-size="9">Model Training (sklearn)</text>
-  <text x="330" y="160" text-anchor="middle" fill="#BF360C" font-size="9">Metrics Evaluation</text>
+  <rect x="510" y="80" width="180" height="45" rx="8" fill="#eaf7fc" stroke="#29b5e8" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="600" y="108" text-anchor="middle" fill="#0e7fad" font-size="13" font-weight="bold">Model Registry</text>
+  <line x1="690" y1="102" x2="728" y2="102" stroke="#29b5e8" stroke-width="1.5"/>
+  <polygon points="726,98 736,102 726,106" fill="#29b5e8"/>
 
-  <!-- Model Registry -->
-  <rect x="470" y="70" width="160" height="100" rx="6" fill="#E3F2FD" stroke="#90CAF9"/>
-  <text x="550" y="92" text-anchor="middle" fill="#1565C0" font-size="10" font-weight="bold">Model Registry</text>
-  <text x="550" y="112" text-anchor="middle" fill="#0D47A1" font-size="9">registry.log_model()</text>
-  <text x="550" y="128" text-anchor="middle" fill="#0D47A1" font-size="9">mv.set_metric()</text>
-  <text x="550" y="144" text-anchor="middle" fill="#0D47A1" font-size="9">Versioned (V1, V2...)</text>
-  <text x="550" y="160" text-anchor="middle" fill="#0D47A1" font-size="9">Conda dependencies</text>
+  <rect x="740" y="80" width="220" height="45" rx="8" fill="#f3f0ff" stroke="#7b61ff" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="850" y="108" text-anchor="middle" fill="#5a3ec8" font-size="13" font-weight="bold">SQL UDFs &gt; Agent</text>
 
-  <!-- UDFs -->
-  <rect x="670" y="70" width="110" height="100" rx="6" fill="#F3E5F5" stroke="#CE93D8"/>
-  <text x="725" y="92" text-anchor="middle" fill="#6A1B9A" font-size="10" font-weight="bold">SQL UDFs</text>
-  <text x="725" y="112" text-anchor="middle" fill="#4A148C" font-size="9">MODEL(name,</text>
-  <text x="725" y="126" text-anchor="middle" fill="#4A148C" font-size="9">version)</text>
-  <text x="725" y="140" text-anchor="middle" fill="#4A148C" font-size="9">!PREDICT(...)</text>
-  <text x="725" y="158" text-anchor="middle" fill="#4A148C" font-size="9">RETURNS ARRAY</text>
+  <!-- Model 1: Churn -->
+  <rect x="30" y="160" width="460" height="85" rx="10" fill="#eaf7fc" stroke="#29b5e8" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="50" y="185" fill="#0e7fad" font-size="14" font-weight="bold">Model 1: Customer Churn Risk</text>
+  <text x="50" y="205" fill="#555" font-size="11">Algorithm: RandomForest Classifier (100 trees, max_depth=5)</text>
+  <text x="50" y="225" fill="#555" font-size="11">Features: avg_docs, usage_trend, ticket_count, avg_csat, days_to_renewal</text>
+  <text x="50" y="240" fill="#555" font-size="11">Target: Binary (churn in 90 days)</text>
 
-  <!-- Arrows between stages -->
-  <path d="M 190 120 L 230 120" stroke="#388E3C" stroke-width="2" fill="none" marker-end="url(#a)"/>
-  <path d="M 430 120 L 470 120" stroke="#E65100" stroke-width="2" fill="none"/>
-  <path d="M 630 120 L 670 120" stroke="#1565C0" stroke-width="2" fill="none"/>
+  <rect x="520" y="160" width="450" height="85" rx="10" fill="#fff" stroke="#29b5e8" stroke-width="1" filter="url(#sh)"/>
+  <text x="540" y="185" fill="#0e7fad" font-size="12" font-weight="bold">CHURN_RISK_MODEL (V1)</text>
+  <text x="540" y="205" fill="#555" font-size="11">UDF: AGENT_PREDICT_CHURN_RISK()</text>
+  <text x="540" y="225" fill="#555" font-size="11">Returns: Top 20 at-risk customers with probability scores</text>
+  <text x="540" y="240" fill="#555" font-size="11">Agent Tool: PredictChurnRisk</text>
 
-  <!-- 4 Models -->
-  <rect x="30" y="210" width="350" height="35" rx="5" fill="#1565C0"/>
-  <text x="205" y="232" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Model 1: CHURN_RISK_MODEL (RandomForest Classifier)</text>
+  <!-- Model 2: Extraction Accuracy -->
+  <rect x="30" y="260" width="460" height="85" rx="10" fill="#f3f0ff" stroke="#7b61ff" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="50" y="285" fill="#5a3ec8" font-size="14" font-weight="bold">Model 2: Extraction Accuracy Prediction</text>
+  <text x="50" y="305" fill="#555" font-size="11">Algorithm: GradientBoosting Regressor (50 estimators, max_depth=3)</text>
+  <text x="50" y="325" fill="#555" font-size="11">Features: sample_count, avg_pages, current_accuracy</text>
+  <text x="50" y="340" fill="#555" font-size="11">Target: Predicted accuracy (0-1 continuous)</text>
 
-  <rect x="30" y="255" width="350" height="35" rx="5" fill="#7B1FA2"/>
-  <text x="205" y="277" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Model 2: EXTRACTION_ACCURACY_MODEL (GBR)</text>
+  <rect x="520" y="260" width="450" height="85" rx="10" fill="#fff" stroke="#7b61ff" stroke-width="1" filter="url(#sh)"/>
+  <text x="540" y="285" fill="#5a3ec8" font-size="12" font-weight="bold">EXTRACTION_ACCURACY_MODEL (V1)</text>
+  <text x="540" y="305" fill="#555" font-size="11">UDF: AGENT_PREDICT_EXTRACTION_ACCURACY()</text>
+  <text x="540" y="325" fill="#555" font-size="11">Returns: Doc type accuracy forecast + retraining recommendations</text>
+  <text x="540" y="340" fill="#555" font-size="11">Agent Tool: PredictExtractionAccuracy</text>
 
-  <rect x="30" y="300" width="350" height="35" rx="5" fill="#E65100"/>
-  <text x="205" y="322" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Model 3: INVOICE_ANOMALY_MODEL (IsolationForest)</text>
+  <!-- Model 3: Invoice Anomaly -->
+  <rect x="30" y="360" width="460" height="85" rx="10" fill="#fff3ed" stroke="#e8530e" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="50" y="385" fill="#b33f08" font-size="14" font-weight="bold">Model 3: Invoice Processing Anomaly Detection</text>
+  <text x="50" y="405" fill="#555" font-size="11">Algorithm: Isolation Forest (100 estimators, 5% contamination)</text>
+  <text x="50" y="425" fill="#555" font-size="11">Features: amount, delivery_time_sec, submit_hour</text>
+  <text x="50" y="440" fill="#555" font-size="11">Target: Anomaly score (unsupervised)</text>
 
-  <rect x="30" y="345" width="350" height="35" rx="5" fill="#2E7D32"/>
-  <text x="205" y="367" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Model 4: CAPACITY_FORECAST_MODEL (GBR)</text>
+  <rect x="520" y="360" width="450" height="85" rx="10" fill="#fff" stroke="#e8530e" stroke-width="1" filter="url(#sh)"/>
+  <text x="540" y="385" fill="#b33f08" font-size="12" font-weight="bold">INVOICE_ANOMALY_MODEL (V1)</text>
+  <text x="540" y="405" fill="#555" font-size="11">UDF: AGENT_DETECT_INVOICE_ANOMALY()</text>
+  <text x="540" y="425" fill="#555" font-size="11">Returns: Top 20 anomalous transactions with type classification</text>
+  <text x="540" y="440" fill="#555" font-size="11">Agent Tool: DetectInvoiceAnomaly</text>
 
-  <!-- UDF names -->
-  <rect x="420" y="210" width="360" height="35" rx="5" fill="#BBDEFB" stroke="#1565C0"/>
-  <text x="600" y="232" text-anchor="middle" fill="#0D47A1" font-size="10">AGENT_PREDICT_CHURN_RISK() → Top 20 at-risk customers + scores</text>
+  <!-- Model 4: Capacity -->
+  <rect x="30" y="460" width="460" height="85" rx="10" fill="#edf9f0" stroke="#00a843" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="50" y="485" fill="#007a31" font-size="14" font-weight="bold">Model 4: Platform Capacity Forecasting</text>
+  <text x="50" y="505" fill="#555" font-size="11">Algorithm: GradientBoosting Regressor (50 estimators, max_depth=3)</text>
+  <text x="50" y="525" fill="#555" font-size="11">Features: avg_queue, std_queue, max_queue</text>
+  <text x="50" y="540" fill="#555" font-size="11">Target: Next-period queue depth (regression)</text>
 
-  <rect x="420" y="255" width="360" height="35" rx="5" fill="#E1BEE7" stroke="#7B1FA2"/>
-  <text x="600" y="277" text-anchor="middle" fill="#4A148C" font-size="10">AGENT_PREDICT_EXTRACTION_ACCURACY() → Doc type accuracy forecast</text>
+  <rect x="520" y="460" width="450" height="85" rx="10" fill="#fff" stroke="#00a843" stroke-width="1" filter="url(#sh)"/>
+  <text x="540" y="485" fill="#007a31" font-size="12" font-weight="bold">CAPACITY_FORECAST_MODEL (V1)</text>
+  <text x="540" y="505" fill="#555" font-size="11">UDF: AGENT_FORECAST_CAPACITY()</text>
+  <text x="540" y="525" fill="#555" font-size="11">Returns: Per-region queue forecasts + scaling recommendations</text>
+  <text x="540" y="540" fill="#555" font-size="11">Agent Tool: ForecastCapacity</text>
 
-  <rect x="420" y="300" width="360" height="35" rx="5" fill="#FFF3E0" stroke="#E65100"/>
-  <text x="600" y="322" text-anchor="middle" fill="#BF360C" font-size="10">AGENT_DETECT_INVOICE_ANOMALY() → Flagged transactions + types</text>
-
-  <rect x="420" y="345" width="360" height="35" rx="5" fill="#E8F5E9" stroke="#2E7D32"/>
-  <text x="600" y="367" text-anchor="middle" fill="#1B5E20" font-size="10">AGENT_FORECAST_CAPACITY() → Region queue predictions</text>
-
-  <!-- Arrows model to UDF -->
-  <path d="M 380 227 L 420 227" stroke="#1565C0" stroke-width="1.5" fill="none"/>
-  <path d="M 380 272 L 420 272" stroke="#7B1FA2" stroke-width="1.5" fill="none"/>
-  <path d="M 380 317 L 420 317" stroke="#E65100" stroke-width="1.5" fill="none"/>
-  <path d="M 380 362 L 420 362" stroke="#2E7D32" stroke-width="1.5" fill="none"/>
-
-  <!-- Pipeline label -->
-  <text x="400" y="420" text-anchor="middle" fill="#546E7A" font-size="11">Data → Notebook (train) → Registry (log_model) → UDFs (MODEL!PREDICT) → Agent (generic tool)</text>
-  <text x="400" y="440" text-anchor="middle" fill="#78909C" font-size="10">All models versioned. Never use hardcoded thresholds — always call registered models.</text>
+  <!-- Footer -->
+  <text x="500" y="580" text-anchor="middle" fill="#666" font-size="11">All models versioned in Snowflake Model Registry. UDFs call MODEL(name, version)!PREDICT(). Never hardcode thresholds.</text>
 </svg>
