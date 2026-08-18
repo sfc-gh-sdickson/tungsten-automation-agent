@@ -115,7 +115,26 @@ This agent incorporates a standards-based ontology layer that provides:
 
 ## Sample Questions
 
-See [docs/questions.md](docs/questions.md) for 46 complex test questions spanning document processing, workflow automation, invoice network, customer health, platform operations, revenue, ML predictions, and standards/compliance.
+The agent ships with 14 sample questions demonstrating each tool:
+
+| # | Type | Tool Demonstrated | Question |
+|---|------|-------------------|----------|
+| 1 | Simple | General | "How many documents did we process last month?" |
+| 2 | Complex (multi-tool) | Churn + Customer + Revenue + Standards | "Show me top 5 churn-risk customers with ARR, CSAT, usage, and mandate exposure" |
+| 3 | Tool-specific | DocumentProcessingAnalyst | "Average extraction accuracy by product this month?" |
+| 4 | Tool-specific | WorkflowAutomationAnalyst | "Which workflows have the highest failure rates?" |
+| 5 | Tool-specific | InvoiceNetworkAnalyst | "How many e-invoices processed by country this quarter?" |
+| 6 | Tool-specific | CustomerHealthAnalyst | "Which customers have declining volumes month over month?" |
+| 7 | Tool-specific | PlatformOperationsAnalyst | "Platform availability by region for the last week" |
+| 8 | Tool-specific | RevenueBusinessAnalyst | "Total ARR by product family?" |
+| 9 | Tool-specific | ProductDocsSearch | "How do I configure three-way matching?" |
+| 10 | Tool-specific | StandardsComplianceSearch | "Which APQC processes relate to accounts payable?" |
+| 11 | Tool-specific | PredictChurnRisk | "Which customers are at highest churn risk?" |
+| 12 | Tool-specific | PredictExtractionAccuracy | "Which document types need model retraining?" |
+| 13 | Tool-specific | DetectInvoiceAnomaly | "Any anomalous invoice transactions in 30 days?" |
+| 14 | Tool-specific | ForecastCapacity | "Do we need to scale any regions?" |
+
+See [docs/questions.md](docs/questions.md) for 46 additional complex test questions spanning all domains.
 
 ## Technology Stack
 
