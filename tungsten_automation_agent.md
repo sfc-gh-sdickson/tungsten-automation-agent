@@ -664,3 +664,6 @@ These map directly to the operational challenges of running a multi-product SaaS
 11. Always put this line of code at the top of all documentation files: <img src="Snowflake_Logo.svg" width="200">
 12. In Snowflake Notebooks, ALWAYS use `get_active_session()` for session and dedicated SQL cells for queries
 13. ALWAYS call `get_notebook_guide` before writing any notebook code
+14. ALWAYS include `execution_environment` with `type: "warehouse"` and `warehouse: "<name>"` on EVERY tool_resource in the Agent YAML — including Cortex Analyst tools, not just UDFs
+15. ALWAYS train and deploy ML models as part of the build — ML models are NEVER optional or deferred to the user
+16. ALWAYS include at least 14 sample_questions in the Agent spec: 1 simple, 1 complex multi-tool, and 1 per defined tool (12)
