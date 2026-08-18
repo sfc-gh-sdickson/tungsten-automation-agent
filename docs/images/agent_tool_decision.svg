@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1050" font-family="Segoe UI, Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1060" font-family="Segoe UI, Arial, sans-serif">
   <defs>
     <filter id="sh">
       <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.12"/>
@@ -20,7 +20,7 @@
     </marker>
   </defs>
 
-  <rect width="1200" height="1050" fill="#ffffff"/>
+  <rect width="1200" height="1060" fill="#ffffff"/>
 
   <text x="600" y="40" text-anchor="middle" fill="#1a1a2e" font-size="26" font-weight="bold">Agent Tool Decision Flow</text>
   <text x="600" y="65" text-anchor="middle" fill="#666" font-size="13">How TUNGSTEN_AUTOMATION_AGENT Routes Queries to the Right Tool</text>
@@ -60,8 +60,8 @@
 
   <!-- Right branch: Custom UDFs -->
   <line x1="750" y1="330" x2="1005" y2="330" stroke="#e8530e" stroke-width="2" marker-end="url(#arrowOrange)"/>
-  <rect x="810" y="310" width="140" height="20" rx="4" fill="#fff"/>
-  <text x="880" y="324" text-anchor="middle" fill="#e8530e" font-size="10" font-weight="bold">Predict / Detect</text>
+  <rect x="770" y="310" width="120" height="20" rx="4" fill="#fff"/>
+  <text x="830" y="324" text-anchor="middle" fill="#e8530e" font-size="10" font-weight="bold">Predict / Detect</text>
 
   <!-- Tool 1: Standards/Compliance Search -->
   <rect x="20" y="275" width="240" height="110" rx="10" fill="#f3f0ff" stroke="#7b61ff" stroke-width="1.5" filter="url(#sh)"/>
@@ -157,7 +157,7 @@
   <text x="800" y="881" text-anchor="middle" fill="#0e7fad" font-size="9" font-weight="bold">2. Workflow</text>
 
   <!-- DECISION SIGNALS LEGEND -->
-  <rect x="100" y="930" width="1000" height="100" rx="12" fill="#f8f9fa" stroke="#dde1e6" stroke-width="1" filter="url(#sh)"/>
+  <rect x="100" y="930" width="1000" height="115" rx="12" fill="#f8f9fa" stroke="#dde1e6" stroke-width="1" filter="url(#sh)"/>
   <text x="600" y="955" text-anchor="middle" fill="#1a1a2e" font-size="14" font-weight="bold">DECISION SIGNALS</text>
   <text x="600" y="973" text-anchor="middle" fill="#888" font-size="11">How the Agent determines which tool to invoke</text>
 
