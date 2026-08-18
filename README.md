@@ -64,6 +64,10 @@ Controlled vocabularies and industry standards joined to operational tables so t
 | DetectInvoiceAnomaly | ML UDF | Invoice processing anomaly detection |
 | ForecastCapacity | ML UDF | Platform capacity forecasting |
 
+## Agent Tool Routing
+
+<img src="docs/images/agent_tool_decision.svg" width="800">
+
 ## Setup Instructions
 
 See [docs/AGENT_SETUP.md](docs/AGENT_SETUP.md) for the complete step-by-step setup guide.

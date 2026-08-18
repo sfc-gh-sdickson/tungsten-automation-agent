@@ -1,0 +1,179 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1050" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <filter id="sh">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.12"/>
+    </filter>
+    <filter id="shLg">
+      <feDropShadow dx="2" dy="3" stdDeviation="5" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#29b5e8"/>
+    </marker>
+    <marker id="arrowOrange" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e8530e"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#00a843"/>
+    </marker>
+    <marker id="arrowPurple" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#7b61ff"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="1050" fill="#ffffff"/>
+
+  <text x="600" y="40" text-anchor="middle" fill="#1a1a2e" font-size="26" font-weight="bold">Agent Tool Decision Flow</text>
+  <text x="600" y="65" text-anchor="middle" fill="#666" font-size="13">How TUNGSTEN_AUTOMATION_AGENT Routes Queries to the Right Tool</text>
+
+  <!-- Step 1: User Query -->
+  <rect x="430" y="90" width="340" height="50" rx="10" fill="#29b5e8" filter="url(#sh)"/>
+  <text x="600" y="121" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">User Submits Natural Language Query</text>
+
+  <line x1="600" y1="140" x2="600" y2="170" stroke="#29b5e8" stroke-width="2" marker-end="url(#arrowBlue)"/>
+
+  <!-- Step 2: Agent Orchestrator -->
+  <rect x="370" y="175" width="460" height="55" rx="12" fill="#e8530e" filter="url(#shLg)"/>
+  <text x="600" y="200" text-anchor="middle" fill="#fff" font-size="16" font-weight="bold">TUNGSTEN_AUTOMATION_AGENT</text>
+  <text x="600" y="218" text-anchor="middle" fill="#ffe0cc" font-size="11">LLM Orchestrator analyzes intent, context, and keywords</text>
+
+  <line x1="600" y1="230" x2="600" y2="260" stroke="#e8530e" stroke-width="2" marker-end="url(#arrowOrange)"/>
+
+  <!-- Step 3: Intent Classification Diamond -->
+  <polygon points="600,265 750,330 600,395 450,330" fill="#fff8f0" stroke="#e8530e" stroke-width="2" filter="url(#sh)"/>
+  <text x="600" y="325" text-anchor="middle" fill="#b33f08" font-size="13" font-weight="bold">Classify</text>
+  <text x="600" y="342" text-anchor="middle" fill="#b33f08" font-size="13" font-weight="bold">Query Intent</text>
+
+  <!-- Left branch: Standards/Compliance -->
+  <line x1="450" y1="330" x2="195" y2="330" stroke="#7b61ff" stroke-width="2" marker-end="url(#arrowPurple)"/>
+  <rect x="250" y="310" width="160" height="20" rx="4" fill="#fff"/>
+  <text x="330" y="324" text-anchor="middle" fill="#7b61ff" font-size="10" font-weight="bold">Standards / Compliance</text>
+
+  <!-- Center-Left branch: Cortex Analyst -->
+  <line x1="525" y1="395" x2="330" y2="460" stroke="#29b5e8" stroke-width="2" marker-end="url(#arrowBlue)"/>
+  <rect x="370" y="410" width="130" height="20" rx="4" fill="#fff"/>
+  <text x="435" y="424" text-anchor="middle" fill="#29b5e8" font-size="10" font-weight="bold">Data / Metrics / SQL</text>
+
+  <!-- Center-Right branch: Cortex Search -->
+  <line x1="675" y1="395" x2="870" y2="460" stroke="#00a843" stroke-width="2" marker-end="url(#arrowGreen)"/>
+  <rect x="700" y="410" width="140" height="20" rx="4" fill="#fff"/>
+  <text x="770" y="424" text-anchor="middle" fill="#00a843" font-size="10" font-weight="bold">Docs / How-to / RAG</text>
+
+  <!-- Right branch: Custom UDFs -->
+  <line x1="750" y1="330" x2="1005" y2="330" stroke="#e8530e" stroke-width="2" marker-end="url(#arrowOrange)"/>
+  <rect x="810" y="310" width="140" height="20" rx="4" fill="#fff"/>
+  <text x="880" y="324" text-anchor="middle" fill="#e8530e" font-size="10" font-weight="bold">Predict / Detect</text>
+
+  <!-- Tool 1: Standards/Compliance Search -->
+  <rect x="20" y="275" width="240" height="110" rx="10" fill="#f3f0ff" stroke="#7b61ff" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="140" y="298" text-anchor="middle" fill="#5a3ec8" font-size="13" font-weight="bold">StandardsComplianceSearch</text>
+  <line x1="30" y1="306" x2="250" y2="306" stroke="#d4c8ff" stroke-width="1"/>
+  <text x="35" y="324" fill="#444" font-size="10">WHEN: "Which APQC processes..."</text>
+  <text x="35" y="340" fill="#444" font-size="10">"UBL mandatory fields for..."</text>
+  <text x="35" y="356" fill="#444" font-size="10">"ITIL metrics for incident..."</text>
+  <text x="35" y="372" fill="#444" font-size="10">"e-invoicing mandates in..."</text>
+
+  <!-- Tool 2: Cortex Analyst (6 domains) -->
+  <rect x="180" y="465" width="300" height="155" rx="10" fill="#eaf7fc" stroke="#29b5e8" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="330" y="488" text-anchor="middle" fill="#0e7fad" font-size="13" font-weight="bold">Cortex Analyst (6 Domains)</text>
+  <text x="330" y="504" text-anchor="middle" fill="#29b5e8" font-size="10">Text-to-SQL via Domain Semantic Views</text>
+  <line x1="190" y1="512" x2="470" y2="512" stroke="#b3e5fc" stroke-width="1"/>
+  <text x="195" y="530" fill="#444" font-size="10">WHEN: "Extraction accuracy by..."</text>
+  <text x="195" y="546" fill="#444" font-size="10">"Workflow failure rates..."</text>
+  <text x="195" y="562" fill="#444" font-size="10">"e-Invoices by country..."</text>
+  <text x="195" y="578" fill="#444" font-size="10">"Customer usage decline..."</text>
+  <text x="195" y="594" fill="#444" font-size="10">"Platform availability..."</text>
+  <text x="195" y="610" fill="#444" font-size="10">"ARR by product family..."</text>
+
+  <!-- Tool 3: Product Docs Search -->
+  <rect x="720" y="465" width="260" height="130" rx="10" fill="#edf9f0" stroke="#00a843" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="850" y="488" text-anchor="middle" fill="#007a31" font-size="13" font-weight="bold">ProductDocsSearch</text>
+  <text x="850" y="504" text-anchor="middle" fill="#00a843" font-size="10">RAG / Semantic Search</text>
+  <line x1="730" y1="512" x2="970" y2="512" stroke="#b9f6ca" stroke-width="1"/>
+  <text x="735" y="530" fill="#444" font-size="10">WHEN: "How to configure..."</text>
+  <text x="735" y="546" fill="#444" font-size="10">"TotalAgility classification..."</text>
+  <text x="735" y="562" fill="#444" font-size="10">"Troubleshoot workflow..."</text>
+  <text x="735" y="578" fill="#444" font-size="10">"Best practices for extraction..."</text>
+
+  <!-- Tool 4: ML UDFs -->
+  <rect x="905" y="275" width="275" height="110" rx="10" fill="#fff3ed" stroke="#e8530e" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="1043" y="298" text-anchor="middle" fill="#b33f08" font-size="13" font-weight="bold">ML Prediction UDFs</text>
+  <line x1="915" y1="306" x2="1170" y2="306" stroke="#ffd4bf" stroke-width="1"/>
+  <text x="920" y="324" fill="#444" font-size="10">WHEN: "Which customers at churn risk..."</text>
+  <text x="920" y="340" fill="#444" font-size="10">"Predict extraction accuracy..."</text>
+  <text x="920" y="356" fill="#444" font-size="10">"Detect invoice anomalies..."</text>
+  <text x="920" y="372" fill="#444" font-size="10">"Forecast capacity needs..."</text>
+
+  <!-- MULTI-TOOL SECTION -->
+  <rect x="100" y="650" width="1000" height="260" rx="12" fill="#f8f9fa" stroke="#dde1e6" stroke-width="1" filter="url(#sh)"/>
+  <text x="600" y="676" text-anchor="middle" fill="#1a1a2e" font-size="14" font-weight="bold">MULTI-TOOL CHAINING (Complex Queries)</text>
+  <text x="600" y="694" text-anchor="middle" fill="#888" font-size="11">Agent chains multiple tools when a single tool cannot fully answer the query</text>
+
+  <rect x="120" y="710" width="460" height="55" rx="8" fill="#fff" stroke="#29b5e8" stroke-width="1" filter="url(#sh)"/>
+  <text x="135" y="730" fill="#1a1a2e" font-size="11" font-weight="bold">"Declining customers with their support CSAT scores"</text>
+  <rect x="135" y="738" width="105" height="18" rx="4" fill="#eaf7fc" stroke="#29b5e8" stroke-width="0.5"/>
+  <text x="188" y="751" text-anchor="middle" fill="#0e7fad" font-size="9" font-weight="bold">1. CustomerHealth</text>
+  <text x="248" y="751" fill="#888" font-size="10">&gt;</text>
+  <rect x="260" y="738" width="105" height="18" rx="4" fill="#fff3ed" stroke="#e8530e" stroke-width="0.5"/>
+  <text x="313" y="751" text-anchor="middle" fill="#b33f08" font-size="9" font-weight="bold">2. ChurnPredict</text>
+
+  <rect x="620" y="710" width="460" height="55" rx="8" fill="#fff" stroke="#7b61ff" stroke-width="1" filter="url(#sh)"/>
+  <text x="635" y="730" fill="#1a1a2e" font-size="11" font-weight="bold">"Countries with upcoming mandates and our invoice volumes there"</text>
+  <rect x="635" y="738" width="95" height="18" rx="4" fill="#f3f0ff" stroke="#7b61ff" stroke-width="0.5"/>
+  <text x="683" y="751" text-anchor="middle" fill="#5a3ec8" font-size="9" font-weight="bold">1. Standards</text>
+  <text x="738" y="751" fill="#888" font-size="10">&gt;</text>
+  <rect x="750" y="738" width="110" height="18" rx="4" fill="#eaf7fc" stroke="#29b5e8" stroke-width="0.5"/>
+  <text x="805" y="751" text-anchor="middle" fill="#0e7fad" font-size="9" font-weight="bold">2. InvoiceNetwork</text>
+
+  <rect x="120" y="775" width="460" height="55" rx="8" fill="#fff" stroke="#e8530e" stroke-width="1" filter="url(#sh)"/>
+  <text x="135" y="795" fill="#1a1a2e" font-size="11" font-weight="bold">"Anomalous invoices from high-churn-risk customers"</text>
+  <rect x="135" y="803" width="105" height="18" rx="4" fill="#fff3ed" stroke="#e8530e" stroke-width="0.5"/>
+  <text x="188" y="816" text-anchor="middle" fill="#b33f08" font-size="9" font-weight="bold">1. ChurnPredict</text>
+  <text x="248" y="816" fill="#888" font-size="10">&gt;</text>
+  <rect x="260" y="803" width="110" height="18" rx="4" fill="#fff3ed" stroke="#e8530e" stroke-width="0.5"/>
+  <text x="315" y="816" text-anchor="middle" fill="#b33f08" font-size="9" font-weight="bold">2. InvoiceAnomaly</text>
+
+  <rect x="620" y="775" width="460" height="55" rx="8" fill="#fff" stroke="#00a843" stroke-width="1" filter="url(#sh)"/>
+  <text x="635" y="795" fill="#1a1a2e" font-size="11" font-weight="bold">"How to configure three-way matching and our current success rate"</text>
+  <rect x="635" y="803" width="105" height="18" rx="4" fill="#edf9f0" stroke="#00a843" stroke-width="0.5"/>
+  <text x="688" y="816" text-anchor="middle" fill="#007a31" font-size="9" font-weight="bold">1. ProductDocs</text>
+  <text x="748" y="816" fill="#888" font-size="10">&gt;</text>
+  <rect x="760" y="803" width="110" height="18" rx="4" fill="#eaf7fc" stroke="#29b5e8" stroke-width="0.5"/>
+  <text x="815" y="816" text-anchor="middle" fill="#0e7fad" font-size="9" font-weight="bold">2. InvoiceNetwork</text>
+
+  <rect x="120" y="840" width="460" height="55" rx="8" fill="#fff" stroke="#29b5e8" stroke-width="1" filter="url(#sh)"/>
+  <text x="135" y="860" fill="#1a1a2e" font-size="11" font-weight="bold">"Platform capacity forecast and current error rates by region"</text>
+  <rect x="135" y="868" width="115" height="18" rx="4" fill="#fff3ed" stroke="#e8530e" stroke-width="0.5"/>
+  <text x="193" y="881" text-anchor="middle" fill="#b33f08" font-size="9" font-weight="bold">1. CapacityForecast</text>
+  <text x="258" y="881" fill="#888" font-size="10">&gt;</text>
+  <rect x="270" y="868" width="110" height="18" rx="4" fill="#eaf7fc" stroke="#29b5e8" stroke-width="0.5"/>
+  <text x="325" y="881" text-anchor="middle" fill="#0e7fad" font-size="9" font-weight="bold">2. PlatformOps</text>
+
+  <rect x="620" y="840" width="460" height="55" rx="8" fill="#fff" stroke="#7b61ff" stroke-width="1" filter="url(#sh)"/>
+  <text x="635" y="860" fill="#1a1a2e" font-size="11" font-weight="bold">"APQC processes for AP and our workflow automation rates"</text>
+  <rect x="635" y="868" width="95" height="18" rx="4" fill="#f3f0ff" stroke="#7b61ff" stroke-width="0.5"/>
+  <text x="683" y="881" text-anchor="middle" fill="#5a3ec8" font-size="9" font-weight="bold">1. Standards</text>
+  <text x="738" y="881" fill="#888" font-size="10">&gt;</text>
+  <rect x="750" y="868" width="100" height="18" rx="4" fill="#eaf7fc" stroke="#29b5e8" stroke-width="0.5"/>
+  <text x="800" y="881" text-anchor="middle" fill="#0e7fad" font-size="9" font-weight="bold">2. Workflow</text>
+
+  <!-- DECISION SIGNALS LEGEND -->
+  <rect x="100" y="930" width="1000" height="100" rx="12" fill="#f8f9fa" stroke="#dde1e6" stroke-width="1" filter="url(#sh)"/>
+  <text x="600" y="955" text-anchor="middle" fill="#1a1a2e" font-size="14" font-weight="bold">DECISION SIGNALS</text>
+  <text x="600" y="973" text-anchor="middle" fill="#888" font-size="11">How the Agent determines which tool to invoke</text>
+
+  <circle cx="155" cy="997" r="8" fill="#29b5e8"/>
+  <text x="170" y="1002" fill="#444" font-size="11" font-weight="bold">Analyst:</text>
+  <text x="228" y="1002" fill="#666" font-size="10">Quantitative keywords, "by product", "trend", "compare", "top 10", metrics</text>
+
+  <circle cx="650" cy="997" r="8" fill="#00a843"/>
+  <text x="665" y="1002" fill="#444" font-size="11" font-weight="bold">Search:</text>
+  <text x="718" y="1002" fill="#666" font-size="10">How-to, configure, troubleshoot, best practices, product features</text>
+
+  <circle cx="155" cy="1022" r="8" fill="#7b61ff"/>
+  <text x="170" y="1027" fill="#444" font-size="11" font-weight="bold">Standards:</text>
+  <text x="245" y="1027" fill="#666" font-size="10">APQC, UBL, ITIL, GDPR, Peppol, mandate, compliance, regulation</text>
+
+  <circle cx="650" cy="1022" r="8" fill="#e8530e"/>
+  <text x="665" y="1027" fill="#444" font-size="11" font-weight="bold">UDFs:</text>
+  <text x="705" y="1027" fill="#666" font-size="10">"at risk", "predict", "forecast", "anomaly", "churn", "detect"</text>
+</svg>

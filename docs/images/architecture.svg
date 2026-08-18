@@ -12,8 +12,8 @@
   <text x="600" y="65" text-anchor="middle" fill="#666" font-size="13">Snowflake Intelligence + APQC/Dublin Core/UBL/ITIL Ontology + 6 Domain Semantic Views + ML Predictions</text>
 
   <!-- Users -->
-  <rect x="380" y="85" width="440" height="50" rx="10" fill="#29b5e8" filter="url(#sh)"/>
-  <text x="600" y="116" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">Users: Product Managers, Customer Success, Executives, Platform Eng</text>
+  <rect x="320" y="85" width="560" height="50" rx="10" fill="#29b5e8" filter="url(#sh)"/>
+  <text x="600" y="116" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">Users: Product Managers, Customer Success, Executives, Platform Engineers</text>
 
   <line x1="600" y1="135" x2="600" y2="165" stroke="#29b5e8" stroke-width="2"/>
   <polygon points="596,163 604,163 600,173" fill="#29b5e8"/>
